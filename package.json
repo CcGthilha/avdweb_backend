@@ -1,0 +1,25 @@
+{
+  "name": "rice-dispatch-server",
+  "version": "1.0.0",
+  "description": "Web API สำหรับ rice-dispatch (ส่งด่วนมื้อเที่ยง)",
+  "main": "dist/server.js",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node-dev server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.6",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
