@@ -1,0 +1,10 @@
+import "dotenv/config"; // ต้องอยู่บรรทัดแรก ก่อน import app/dbconnect
+import http from "http";
+import { app } from "./app";
+
+const port = process.env.PORT || 3000;
+const server = http.createServer(app);
+
+server.listen(port, () => {
+  console.log(`Server is started on port ${port}`);
+});
