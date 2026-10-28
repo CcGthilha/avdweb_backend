@@ -49,6 +49,20 @@ export async function getPlanDetail(db: Queryable, planId: number): Promise<Plan
   plan.trips = attachStops(trips as any[], stops as any[]);
   return plan;
 }
+// ตัวอย่าง 
+// {
+//   "planId": 12, "planDate": "2026-10-21", "versionNo": 2,
+//   "profit": 1043.5, "isOnTime": true, "latestEta": "11:58",
+//   "trips": [
+//     {
+//       "jobCode": "J26102102-01", "riderName": "สมชาย", "deliveryFee": 24.52,
+//       "stops": [
+//         { "stopSeq": 1, "customerName": "...", "eta": "11:31", "navUrl": "https://www.google.com/maps/..." },
+//         { "stopSeq": 2, "customerName": "...", "eta": "11:35", "navUrl": "..." }
+//       ]
+//     }
+//   ]
+// }
 
 // ตั้งสถานะใบงาน + ออเดอร์ในใบงานใหม่ ตามจุดที่ส่งสำเร็จแล้ว
 //   ยังไม่ส่งเลย → ใบงาน ASSIGNED, ออเดอร์ ASSIGNED
