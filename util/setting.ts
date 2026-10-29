@@ -17,6 +17,10 @@ export async function getSetting(db: Queryable): Promise<Setting | null> {
   const [rows] = await db.query(SELECT_SETTING);
   return ((rows as any[])[0] as Setting) || null;
 }
+// ร้าน: ชื่อ, พิกัด (lat/lng), รัศมี
+// เงิน: ราคาขาย, ต้นทุน, ค่าเรียกไรเดอร์, อัตราค่าส่ง
+// ข้อจำกัด: ออเดอร์ต่อไรเดอร์, กล่องต่อออเดอร์
+// เวลา: ความเร็ว, เวลาออกจากร้าน, เวลาเส้นตาย
 
 // ค่าส่งของใบงาน: ค่าเรียก + อัตรา × กล่อง × กม.  (15 + 2 × box_count × distance_km)
 export function deliveryFee(s: Setting, boxes: number, km: number): number {
